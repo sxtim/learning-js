@@ -104,74 +104,129 @@ const developers1 = [
 ];
 
 const tsDevelopers = developers1.filter(developer => developer.skills.includes('TypeScript'));
+
 console.log(tsDevelopers);
 
 //reduce
-
 const order = [
    {
-       id: 1,
-       name: 'Лопата',
-       price: 1000,
-       quantity: 1,
+      id: 1,
+      name: 'Лопата',
+      price: 1000,
+      quantity: 1,
    },
    {
-       id: 2,
-       name: 'Удочка',
-       price: 1200,
-       quantity: 2,
+      id: 2,
+      name: 'Удочка',
+      price: 1200,
+      quantity: 2,
    },
    {
-       id: 3,
-       name: 'Ведро',
-       price: 500,
-       quantity: 3,
+      id: 3,
+      name: 'Ведро',
+      price: 500,
+      quantity: 3,
    },
    {
-       id: 4,
-       name: 'Мороженое',
-       price: 100,
-       quantity: 8,
+      id: 4,
+      name: 'Мороженое',
+      price: 100,
+      quantity: 8,
    },
 ];
 
 const totalPrice = order.reduce((acc, obj) => {
-      return acc += obj.price * obj.quantity;
+   return acc += obj.price * obj.quantity;
 }, 0);
 
 console.log(totalPrice);
 
 //find
-
 const players = [
    {
-       id: 1,
-       name: 'Andres',
-       surname: 'Iniesta',
-       club: 'Vissel Cobe',
+      id: 1,
+      name: 'Andres',
+      surname: 'Iniesta',
+      club: 'Vissel Cobe',
    },
    {
-       id: 2,
-       name: 'Eden',
-       surname: 'Hazard',
-       club: 'Real Madrid',
+      id: 2,
+      name: 'Eden',
+      surname: 'Hazard',
+      club: 'Real Madrid',
    },
    {
-       id: 3,
-       name: 'Mo',
-       surname: 'Salah',
-       club: 'Liverpool',
+      id: 3,
+      name: 'Mo',
+      surname: 'Salah',
+      club: 'Liverpool',
    },
    {
-       id: 4,
-       name: 'Lionel',
-       surname: 'Messi',
-       club: 'Barcelona',
+      id: 4,
+      name: 'Lionel',
+      surname: 'Messi',
+      club: 'Barcelona',
    },
 ];
 
 const messi = players.find(obj => obj.surname === 'Messi');
 console.log(messi);
+
+//sort
+const food = ["Apple", "Melon", "Banana", "Yogurt", "Orange", "Stawberry"];
+
+const players1 = [
+   {
+      id: 1,
+      name: 'Cristiano',
+      surname: 'Ronaldo',
+      club: 'Juventus',
+   },
+   {
+      id: 2,
+      name: 'Lionel',
+      surname: 'Messi',
+      club: 'Barcelona',
+   },
+   {
+      id: 3,
+      name: 'Karim',
+      surname: 'Benzema',
+      club: 'Real Madrid',
+   },
+   {
+      id: 4,
+      name: 'Maxi',
+      surname: 'Gomez',
+      club: 'Valencia',
+   },
+   {
+      id: 5,
+      name: 'Quincy',
+      surname: 'Promes',
+      club: 'Spartak',
+   },
+];
+
+
+food.sort(sorting);
+players1.sort((obj1, obj2) => sorting(obj1.surname, obj2.surname));
+console.log(players1);
+console.log(food);
+players1.sort((obj1, obj2) => obj2.id - obj1.id);
+console.log(players1);
+
+function sorting(a, b) {
+   if (a > b) {
+      return 1;
+   }
+   if (a < b) {
+      return -1;
+   }
+   return 0;
+}
+
+
 
 
 
